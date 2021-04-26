@@ -35,12 +35,12 @@
         <TextBox x:Name="tbUpperBound" Grid.Row="1" Grid.Column="1" Margin="5,5.333,4.333,4.333" Grid.ColumnSpan="2">100</TextBox>
         <TextBlock  Grid.Row="2" Grid.Column="0" Margin="5,4.667,5,4">N, count</TextBlock>
         <TextBlock  Grid.Row="4" Grid.Column="0" Margin="5,10.333,5,365.333" RenderTransformOrigin="0.494,2.306">Square</TextBlock>
-        <TextBox x:Name="tbN"  Grid.Row="2" Grid.Column="1" Margin="5,4.667,4.333,5" Grid.ColumnSpan="2" TextChanged="tbN_TextChanged">1000000</TextBox>
+        <TextBox x:Name="tbN"  Grid.Row="2" Grid.Column="1" Margin="5,4.667,4.333,5" Grid.ColumnSpan="2">1000000</TextBox>
         <Button x:Name="btCalculate" Grid.Row="2" Grid.Column="3" Click="btCalculate_Click" Margin="125.667,0.333,10.333,4">Построить график</Button>
 
         <Button x:Name="btClear" Grid.Row="4" Grid.Column="3" Margin="125.667,10.333,10.333,365.333" Click="btClear_Click" RenderTransformOrigin="0.493,3.384">Очистить график</Button>
         <TextBox x:Name ="tbResult" Grid.Row="4" 
-                 Grid.Column="1" IsReadOnly="True" TextWrapping="Wrap" Background="LightCyan" TextChanged="tbResult_TextChanged" RenderTransformOrigin="0.141,3.939" Grid.ColumnSpan="2" Margin="10,6.333,9.333,360.333">
+                 Grid.Column="1" IsReadOnly="True" TextWrapping="Wrap" Background="LightCyan" RenderTransformOrigin="0.141,3.939" Grid.ColumnSpan="2" Margin="10,6.333,9.333,360.333">
         </TextBox>
         <ComboBox x:Name="cbmMethod" Grid.Column="3" Margin="125.667,5,165.333,27.667" RenderTransformOrigin="1.308,0.235" Grid.RowSpan="2">
             <ComboBoxItem IsSelected="True">

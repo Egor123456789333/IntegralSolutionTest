@@ -10,10 +10,8 @@ namespace CalculateLibrary
     {
         public double Calculate(double a, double b, long n, Func<double, double> f)
         {
-            if (n <= 0)
-            {
-                throw new ArgumentException();
-            }
+            if (n < 0) throw new ArgumentException();
+
             double h = (b - a) / n;
             a += h * 0.5;
 
