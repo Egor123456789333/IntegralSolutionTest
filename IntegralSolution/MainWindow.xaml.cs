@@ -18,7 +18,6 @@ using OxyPlot;
 
 namespace IntegralSolution
 {
-
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -62,17 +61,17 @@ namespace IntegralSolution
             var calculator = GetCalculator();
             var time = new List<(double, int)>();
 
-            double result = 0.0;
+            double result = calculator.Calculate(a, b, n, x => 32 * x - Math.Log(14 * x) - 2);
+
             for (var i = 1000; i < n; i += 1000)
             {
-                var timeStart = DateTime.Now;
-                result = calculator.Calculate(a, b, i, x => 32 * x - Math.Log(14 * x) - 2);
-                var timeStop = DateTime.Now;
+                DateTime timeStart = DateTime.Now;
+                calculator.Calculate(a, b, i, x => 32 * x - Math.Log(14 * x) - 2);
+                DateTime timeStop = DateTime.Now;
                 time.Add(((timeStop - timeStart).TotalMilliseconds, i));
             }
 
             tbResult.Text = Convert.ToString(result);
-
             return time;
         }
 
@@ -80,33 +79,15 @@ namespace IntegralSolution
         {
             switch (cbmMethod.SelectedIndex)
             {
-                case 0:
-                    {
-                        return new RectangleCalculator();
-                    }
-                case 1:
-                    {
-                        return new Simpson();
-                    }
-                default:
-                    {
-                        return new RectangleCalculator();
-                    }
+                case 0: return new RectangleCalculator();
+                case 1: return new Simpson();
+                default: return new RectangleCalculator();
             }
         }
+
         private void btClear_Click(object sender, RoutedEventArgs e)
         {
             ClearGraph();
-        }
-
-        private void tbResult_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void tbN_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

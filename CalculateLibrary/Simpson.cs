@@ -10,25 +10,25 @@ namespace CalculateLibrary
     {
         public double Calculate(double a, double b, long n, Func<double, double> f)
         {
-            var h = (b - a) / n;
-            var sum = 0d;
-            var sum2 = 0d;
-            for (var k = 1; k <= n; k++)
+            if (n < 0) throw new ArgumentException();
+            double h = (b - a) / n;
+            double sum = 0;
+            double sum2 = 0;
+
+            for (int k = 1; k <= n; k++)
             {
-                var xk = a + k * h;
+                double xk = a + k * h;
                 if (k <= n - 1)
                 {
                     sum += f(xk);
                 }
 
-                var xk_1 = a + (k - 1) * h;
+                double xk_1 = a + (k - 1) * h;
                 sum2 += f((xk + xk_1) / 2);
-
             }
 
-            var result = h / 3d * (1d / 2d * f(a) + sum + 2 * sum2 + 1d / 2d * f(b));
+            double result = h / 3 * (1 / 2 * f(a) + sum + 2 * sum2 + 1 / 2 * f(b));
             return result;
-
         }
     }
 }
