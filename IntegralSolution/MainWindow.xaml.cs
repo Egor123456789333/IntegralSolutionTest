@@ -25,13 +25,13 @@ namespace IntegralSolution
         {
             InitializeComponent();
         }
-
+        //кнопка рассчитать
         private void btCalculate_Click(object sender, RoutedEventArgs e)
         {
             var time = Calculate();
             DrawGraph(time);
         }
-
+        //функция отрисовки 
         private void DrawGraph(ICollection<(double Time, int PointCount)> times)
         {
             var model = DataContext as MainViewModel;
@@ -45,7 +45,7 @@ namespace IntegralSolution
 
             graph.InvalidatePlot(true);
         }
-
+       //метод очистки графика
         private void ClearGraph()
         {
             var model = DataContext as MainViewModel;
@@ -75,18 +75,18 @@ namespace IntegralSolution
 
             return time;
         }
-
+        //интерфейс с выбором метода
         private ICalculator GetCalculator()
         {
             switch (cbmMethod.SelectedIndex)
             {
                 case 0:
                     {
-                        return new RectangleCalculator();
+                        return new RectangleCalculator();//рассчёт прямоугольниками
                     }
                 case 1:
                     {
-                        return new Simpson();
+                        return new Simpson();// рассчёт методом симпсона
                     }
                 default:
                     {
@@ -94,6 +94,7 @@ namespace IntegralSolution
                     }
             }
         }
+        //кнопка очистки графика
         private void btClear_Click(object sender, RoutedEventArgs e)
         {
             ClearGraph();
