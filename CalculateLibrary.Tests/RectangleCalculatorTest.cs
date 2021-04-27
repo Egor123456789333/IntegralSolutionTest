@@ -63,6 +63,23 @@ namespace CalculateLibrary.Tests
 
             //assert
             Assert.AreEqual(expected, actual, 0.0001);
-        }
+
+
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Error_if_a_and_b_below_zero()
+          {
+            //arrange
+            int a = -1;
+            int b = -100;
+            int n = 100;
+            Func<double, double> f = x => 35 * x - Math.Log(10 * x) + 2;
+
+            RectangleCalculator RectangleCalculator = new RectangleCalculator();
+
+            //act
+            double actual1 = RectangleCalculator.Calculate(a, b, n, f);
+            }
     }
 }

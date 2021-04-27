@@ -10,6 +10,7 @@ namespace CalculateLibrary
     {
         public double Calculate(double a, double b, long n, Func<double, double> f)
         {
+            if ((a < 0) | (b < 0)) throw new ArgumentException("a или b меньше допустимо значения");
             if (n <= 0)
             {
                 throw new ArgumentException();
