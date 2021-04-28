@@ -69,6 +69,9 @@ namespace CalculateLibrary.Tests
 
             //assert
             Assert.AreEqual(expected, actual, 0.0001);
+
+
+            }
         }
     }
 }
