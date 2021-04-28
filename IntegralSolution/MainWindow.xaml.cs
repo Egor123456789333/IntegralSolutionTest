@@ -25,13 +25,13 @@ namespace IntegralSolution
         {
             InitializeComponent();
         }
-
+        //рассчёт значения и построение графика
         private void btCalculate_Click(object sender, RoutedEventArgs e)
         {
             var time = Calculate();
             DrawGraph(time);
         }
-
+        //метод построения графика
         private void DrawGraph(ICollection<(double Time, int PointCount)> times)
         {
             var model = DataContext as MainViewModel;
@@ -45,14 +45,14 @@ namespace IntegralSolution
 
             graph.InvalidatePlot(true);
         }
-
+        //метод очистки графика
         private void ClearGraph()
         {
             var model = DataContext as MainViewModel;
             model.Points.Clear();
             graph.InvalidatePlot(true);
         }
-
+        //коллекция
         private ICollection<(double Time, int PointCount)> Calculate()
         {
             var a = Convert.ToDouble(tbLowerBound.Text);
@@ -75,7 +75,7 @@ namespace IntegralSolution
 
             return time;
         }
-
+        //выбор метода рассчёта
         private ICalculator GetCalculator()
         {
             switch (cbmMethod.SelectedIndex)
@@ -94,19 +94,11 @@ namespace IntegralSolution
                     }
             }
         }
+        //кнопка очистки графика
         private void btClear_Click(object sender, RoutedEventArgs e)
         {
             ClearGraph();
         }
 
-        private void tbResult_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void tbN_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

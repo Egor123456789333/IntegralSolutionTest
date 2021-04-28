@@ -18,7 +18,7 @@ namespace CalculateLibrary
             a += h * 0.5;
 
             double sum = 0;
-
+            //эту часть можно распараллелить
             for (int i = 0; i < n; i++)
             {
                 sum += f(a + h * i);
