@@ -8,6 +8,7 @@ namespace CalculateLibrary
 {
     public class RectangleCalculator : ICalculator //реализация интерфейса
     {
+        if ((a< 0) | (b< 0)) throw new ArgumentException("a или b меньше допустимо значения");
         public double Calculate(double a, double b, long n, Func<double, double> f)
         {
             if (n <= 0)
