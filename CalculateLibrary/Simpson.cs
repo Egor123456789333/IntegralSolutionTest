@@ -10,6 +10,10 @@ namespace CalculateLibrary
     {
         public double Calculate(double a, double b, long n, Func<double, double> f)
         {
+            if (n <= 0)
+            {
+                throw new ArgumentException("Аргумент меньше 0");
+            }
             var h = (b - a) / n;
             var sum = 0d;
             var sum2 = 0d;
@@ -21,8 +25,8 @@ namespace CalculateLibrary
                     sum += f(xk);
                 }
 
-                var xk_1 = a + (k - 1) * h;
-                sum2 += f((xk + xk_1) / 2);
+                var xk1 = a + (k - 1) * h;
+                sum2 += f((xk + xk1) / 2);
 
             }
 
