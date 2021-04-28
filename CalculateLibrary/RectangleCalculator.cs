@@ -14,12 +14,12 @@ namespace CalculateLibrary
             {
                 throw new ArgumentException();
             }
-            double h = (b - a) / n;
+            var h = (b - a) / n;
             a += h * 0.5;
 
             double sum = 0;
 
-            for (int i = 0; i < n; i++)
+            for (var i = 0; i < n; i++)
             {
                 sum += f(a + h * i);
             }

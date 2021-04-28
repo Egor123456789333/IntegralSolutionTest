@@ -61,12 +61,12 @@ namespace IntegralSolution
 
             var calculator = GetCalculator();
             var time = new List<(double, int)>();
-
-            double result = 0.0;
+            double result = calculator.Calculate(a, b, i, x => 32 * x - Math.Log(14 * x) - 2);
+           
             for (var i = 1000; i < n; i += 1000)
             {
                 var timeStart = DateTime.Now;
-                result = calculator.Calculate(a, b, i, x => 32 * x - Math.Log(14 * x) - 2);
+                calculator.Calculate(a, b, i, x => 32 * x - Math.Log(14 * x) - 2);
                 var timeStop = DateTime.Now;
                 time.Add(((timeStop - timeStart).TotalMilliseconds, i));
             }
