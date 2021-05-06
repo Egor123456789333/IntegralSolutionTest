@@ -13,15 +13,12 @@
 
     <Grid Margin="5">
         <Grid.ColumnDefinitions>
-            <!--<ColumnDefinition Width="20"></ColumnDefinition>-->
             <ColumnDefinition Width="64*"></ColumnDefinition>
             <ColumnDefinition Width="115*"></ColumnDefinition>
             <ColumnDefinition Width="115*"/>
             <ColumnDefinition Width="458*"></ColumnDefinition>
-            <!--<ColumnDefinition Width="20"></ColumnDefinition>-->
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <!--<RowDefinition Height="20"></RowDefinition>-->
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
