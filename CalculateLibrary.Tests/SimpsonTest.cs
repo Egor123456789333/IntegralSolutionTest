@@ -46,12 +46,6 @@ namespace CalculateLibrary.Tests
         }
 
 
-        /*[TestMethod]
-        public void Trap_Integrate_get_wrong_variables()
-        {
-            double expected = 0;
-            // double a = a;
-        }*/
 
         [TestMethod]
         public void Simpson_Integrate_with_switched_variables()
